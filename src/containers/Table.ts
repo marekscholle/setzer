@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { Table } from '../components/Table';
 import { StoreState } from '../types/StoreState';
 
-function mapStateToProps({ }: StoreState) {
+function mapStateToProps({ organ }: StoreState) {
   return {
+    organ,
   };
 }
 

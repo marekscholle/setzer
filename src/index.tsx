@@ -7,12 +7,14 @@ import App from './components/App';
 import './index.css';
 import { reducer } from './reducers';
 import registerServiceWorker from './registerServiceWorker';
+import { MartinuHallOrgan } from './types/MartinuHallOrgan';
 import { StoreState } from './types/StoreState';
 
 const store: Store<StoreState> = createStore(
   reducer,
   {
     index: 1,
+    organ: new MartinuHallOrgan(),
   },
 );
 
