@@ -3,7 +3,9 @@ import Setzer from '../containers/Setzer';
 import './App.css';
 
 export default () => (
-  <div>
-    <Setzer />
+  <div
+    id='app'
+  >
+    <Setzer/>
   </div>
 );

@@ -28,16 +28,17 @@ export const Table = ({ organ }: Props) => (
           {organ.groups
           .map((group: StopsGroup, index) => {
             const stop = (row < group.stops.size) ? group.stops.get(row) : null;
-            if (stop !== null) {
-              return <td
+            return (stop !== null) ? (
+              <td
                 key={stop.index}
               >
                 {stop.name}
-              </td>;
-            } else {
-              return undefined;
-            }
-          })}
+              </td>) : (
+              <td
+                key={`~${index}`}
+              />);
+            },
+          )}
         </tr>
       ))}
     </tbody>

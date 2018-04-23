@@ -1,28 +1,124 @@
-.App {
+body {
+  margin: 0px;
+}
+#app {
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+}
+#app input, label {
+  border-color: inherit;
+  border-style: solid;
+}
+#app *:focus {
+  outline: none;
+  border-color: DodgerBlue;
+}
+#app *::-moz-focus-inner {
+  border:0;
+}
+#app table {
+  margin-bottom: 24px;
+  border: 3px solid Black;
+  border-collapse: collapse;
+}
+#app table thead {
+  border-bottom: 2px solid Black;
+  text-align: center;
+  font-weight: bold;
+}
+#app table td {
+  border: 1px solid Black;
+  white-space: pre;
+}
+#setzer {
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#setzer:focus {
+  outline: none;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+#setzer > div {
+  display: inline-block;
+  text-align: left;
+  margin: 20px;
 }
-
-.App-title {
-  font-size: 1.5em;
+#index {
+  text-align: center;
+  margin-bottom: 12px;
 }
-
-.App-intro {
-  font-size: large;
+#index input {
+  border: 1px solid Grey;
+  padding: 0.1em 0.5em;
+  width: 3ch;
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: inherit;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#table td {
+  padding: 1.3ex 1em 1.3ex 0.72em;
+}
+#legend td {
+  padding: 1ex 1em;
+}
+#legend .mark {
+  text-align: center;
+}
+#navigation td {
+  padding: 1ex 1em;
+}
+#navigation .key {
+  font-style: italic;
+  text-align: center;
+}
+#load label {
+  display: inline-block;
+  border-width: 3px;
+  padding: 1.3ex 1em 1.3ex 0.72em;
+}
+#load label+span {
+  margin-left: 1em
+}
+#load label:hover {
+  cursor: pointer;
+}
+#load {
+  margin-bottom: 12px
+}
+#save input[type=submit] {
+  margin-left: 0px;
+  display: inline-block;
+  border-width: 3px;
+  border-radius: 0px;
+  padding: 1.3ex 1em 1.3ex 0.72em;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor:pointer;
+}
+#save input[type=text] {
+  margin-left: 0.5em;
+  border-width: 1px;
+  padding: 0.5em;
+  font-family: inherit;
+  font-size: inherit;
+}
+#copyright {
+  margin-right: calc(1em + 5px);
+  text-align: right;
+}
+.stop-on-on {
+  background-color: #1e90ff;
+  color: White;
+}
+.stop-on-off {
+  background-color: #81e51b;
+  color: White;
+}
+.stop-off-on {
+  background-color: #ff8d1e;
+  color: White;
+}
+.stop-off-off
+.stop-index {
+  font-style: italic;
 }
