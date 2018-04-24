@@ -3,8 +3,8 @@ import { Memory } from './Memory';
 import { Organ } from './Organ';
 
 export interface StoreState {
-  organ: Organ;
-  combination: Combination;
-  combinationIndex: number;
-  memory: Memory;
+  readonly organ: Organ;
+  readonly combination: Combination;
+  readonly combinationIndex: number;
+  readonly memory: Memory;
 }

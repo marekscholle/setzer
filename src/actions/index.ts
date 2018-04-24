@@ -1,26 +1,64 @@
 export enum ActionType {
-    CHANGE_STOP = 'CHANGE_STOP',
-    SAVE_COMBINATION = 'SAVE_COMBINATION',
+  ChangeStop = 'CHANGE_STOP',
+  SaveCombination = 'SAVE_COMBINATION',
+  LoadCombination = 'LOAD_COMBINATION',
+  ZeroCombination = 'ZERO_COMBINATION',
+  ChangeCombination = 'CHANGE_COMBINATION',
 }
 
 export type Action =
-    ChangeStopAction |
-    SaveCombinationAction;
+  ChangeStop |
+  SaveCombination |
+  LoadCombination |
+  ZeroCombination |
+  ChangeCombination;
 
-export interface ChangeStopAction {
-    type: ActionType.CHANGE_STOP;
-    index: number;
+export interface ChangeStop {
+  type: ActionType.ChangeStop;
+  index: number;
 }
 
-export const changeStop = (index: number): ChangeStopAction => ({
-    type: ActionType.CHANGE_STOP,
-    index,
+export const changeStop = (index: number): ChangeStop => ({
+  type: ActionType.ChangeStop,
+  index,
 });
 
-export interface SaveCombinationAction {
-    type: ActionType.SAVE_COMBINATION;
+export interface SaveCombination {
+  type: ActionType.SaveCombination;
 }
 
-export const saveCombination = (): SaveCombinationAction => ({
-    type: ActionType.SAVE_COMBINATION,
+export const saveCombination = (): SaveCombination => ({
+  type: ActionType.SaveCombination,
+});
+
+export interface LoadCombination {
+  type: ActionType.LoadCombination;
+}
+
+export const loadCombination = (): LoadCombination => ({
+  type: ActionType.LoadCombination,
+});
+
+export interface ZeroCombination {
+  type: ActionType.ZeroCombination;
+}
+
+export const zeroCombination = (): ZeroCombination => ({
+  type: ActionType.ZeroCombination,
+});
+
+export enum ChangeCombinationMethod {
+  RELATIVE,
+  ABSOLUTE,
+}
+export interface ChangeCombination {
+  type: ActionType.ChangeCombination;
+  method: ChangeCombinationMethod;
+  position: number;
+}
+
+export const changeCombination = (method: ChangeCombinationMethod, position: number): ChangeCombination => ({
+  type: ActionType.ChangeCombination,
+  method,
+  position,
 });
