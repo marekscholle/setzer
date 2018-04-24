@@ -1,2 +1,2 @@
-export const ACTION = 'ACTION';
-export type ACTION = typeof ACTION;
+export const CHANGE_STOP = 'CHANGE_STOP';
+export type CHANGE_STOP = typeof CHANGE_STOP;

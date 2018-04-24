@@ -6,13 +6,15 @@ export interface Props {
   stop: Organ.Stop;
   on: boolean;
   memoryOn: boolean;
+  onClick: () => void;
 }
 
 const onOff = (b: boolean) => b ? 'on' : 'off';
 
-export const Stop = ({ stop, on, memoryOn }: Props) => (
+export const Stop = ({ stop, on, memoryOn, onClick }: Props) => (
   <td
     className={`stop-${onOff(on)}-${onOff(memoryOn)}`}
+    onClick={onClick}
   >
     <span
       className='stop-index'

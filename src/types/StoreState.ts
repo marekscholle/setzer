@@ -1,10 +1,9 @@
-import { Organ } from './Organ';
 // import { Memory } from './Memory'
-// import { Combination } from './Combination'
+import { Combination } from './Combination';
+import { Organ } from './Organ';
 
 export interface StoreState {
   organ: Organ;
   // memory: Memory,
-  // combination: Combination,
-  index: number;
+  combination: Combination;
 }

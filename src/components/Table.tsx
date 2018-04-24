@@ -1,8 +1,9 @@
 import { Range } from 'immutable';
 import * as React from 'react';
 
+import Stop from '../containers/Stop';
 import { Organ, StopsGroup } from '../types/Organ';
-import { EmptyStop, Stop } from './Stop';
+import { EmptyStop } from './Stop';
 
 export interface Props {
   organ: Organ;
@@ -40,9 +41,7 @@ const row = (organ: Organ, rowIndex: number) => (
       return (stop !== null) ? (
         <Stop
           key={stop.index}
-          stop={stop}
-          on={Math.random() < 0.5}
-          memoryOn={Math.random() < 0.5}
+          index={stop.index}
         />) :
         <EmptyStop
           key={`~${index}`}
