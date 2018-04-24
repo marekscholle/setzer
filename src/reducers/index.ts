@@ -1,13 +1,19 @@
-import { Action } from '../actions';
-import { CHANGE_STOP } from '../constants';
+import { Action, ActionType } from '../actions';
 import { StoreState } from '../types/StoreState';
 
 export function reducer(state: StoreState, action: Action): StoreState {
   switch (action.type) {
-    case CHANGE_STOP:
+    case ActionType.CHANGE_STOP:
       return {
         ...state,
         combination: state.combination.switched(action.index),
+      };
+
+    case ActionType.SAVE_COMBINATION:
+      const { combination, combinationIndex, memory } = state;
+      return {
+        ...state,
+        memory: memory.updated(combinationIndex, combination),
       };
 
     default:

@@ -10,6 +10,7 @@ import { reducer } from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 import { Combination } from './types/Combination';
 import { MartinuHallOrgan } from './types/MartinuHallOrgan';
+import { Memory } from './types/Memory';
 import { StoreState } from './types/StoreState';
 
 const organ = new MartinuHallOrgan();
@@ -17,6 +18,8 @@ const organ = new MartinuHallOrgan();
 const preloadedState: StoreState = {
   organ,
   combination: Combination.empty(organ.stops.size),
+  combinationIndex: 0,
+  memory: Memory.empty(organ.count, organ.size),
 };
 
 const store = createStore(
