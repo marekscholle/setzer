@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Index from '../containers/Index';
+import Legend from '../containers/Legend';
 import Table from '../containers/Table';
 
 export interface Props {
@@ -54,11 +55,7 @@ export const Setzer = (props: Props) => (
       >
         <Table />
       </div>
-      <div
-        id='legend'
-      >
-        {/*<Legend />*/}
-      </div>
+      <div id='legend'><Legend /></div>
       <div
         id='navigation'
       >
