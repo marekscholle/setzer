@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import logger from 'redux-logger';
 
-import App from './components/App';
+import Setzer from './containers/Setzer';
 import './index.css';
 import { reducer } from './reducers';
 import registerServiceWorker from './registerServiceWorker';
@@ -30,7 +30,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Setzer />
   </Provider>,
   document.getElementById('root'),
 );

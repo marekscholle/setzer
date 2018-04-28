@@ -4,6 +4,9 @@ import Index from '../containers/Index';
 import Legend from '../containers/Legend';
 import Table from '../containers/Table';
 
+import { Navigation } from './Navigation';
+import './Setzer.css';
+
 export interface Props {
   onSaveCombination: () => void;
   onLoadCombination: () => void;
@@ -45,37 +48,13 @@ export const Setzer = (props: Props) => (
     onKeyDown={e => handleKeyDown(e, props)}
   >
     <div>
-      <div
-        id='index'
-      >
-        <Index />
-      </div>
-      <div
-        id='table'
-      >
-        <Table />
-      </div>
+      <div id='index'><Index /></div>
+      <div id='table'><Table /></div>
       <div id='legend'><Legend /></div>
-      <div
-        id='navigation'
-      >
-        {/*Navigation.Component()*/}
-      </div>
-      <div
-        id='load'
-      >
-        {/*Open.Component(Open.Props(props, handleLoad))*/}
-      </div>
-      <div
-        id='save'
-      >
-        {/*Save.Component(state.memory)*/}
-      </div>
-      <div
-        id='copyright'
-      >
-        <p>("Marek Scholle, 2018")</p>
-      </div>
+      <div id='navigation'><Navigation /></div>
+      <div id='load'>{/*Open.Component(Open.Props(props, handleLoad))*/}</div>
+      <div id='save'>{/*Save.Component(state.memory)*/}</div>
+      <div id='copyright'><p>Marek Scholle, 2018</p></div>
     </div>
   </div>
 );
