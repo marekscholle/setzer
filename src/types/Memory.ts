@@ -15,8 +15,8 @@ export class Memory {
       const offset = index * (size / ByteSize);
 
       return new Combination(
-        Range(offset, offset + (size / ByteSize)).flatMap((byte: number) =>
-          Range(0, ByteSize).map((bit: number) => (
+        Range(offset, offset + (size / ByteSize)).flatMap(byte =>
+          Range(0, ByteSize).map(bit => (
             // tslint:disable-next-line:no-bitwise
             (byte & (1 << bit)) !== 0
           )),
@@ -34,9 +34,9 @@ export class Memory {
   toBytes(memory: Memory): Uint8Array {
     const bytes = new Uint8Array(memory.count * (memory.size / ByteSize));
 
-    memory.combinations.forEach((comb: Combination, index: number) => {
+    memory.combinations.forEach((comb, index) => {
       const offset = index * (memory.size / ByteSize);
-      comb.stops.forEach((stop: boolean, ix: number) => {
+      comb.stops.forEach((stop, ix) => {
         if (stop) {
           const off = offset + (ix / ByteSize);
           // tslint:disable-next-line:no-bitwise
@@ -53,11 +53,11 @@ export class Memory {
   }
 
   switched(index: number, stopIndex: number): Memory {
-    return this.updated(index, this.combinations.get(index).switched(stopIndex));
+    return this.updated(index, this.combinations.get(index)!.switched(stopIndex));
   }
 
   get size(): number {
-    return this.combinations.first().stops.size;
+    return this.combinations.first()!.stops.size;
   }
 
   get count(): number {

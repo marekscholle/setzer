@@ -22,7 +22,7 @@ export function reducer(state: StoreState, action: Action): StoreState {
       const { combinationIndex, memory } = state;
       return {
         ...state,
-        combination: memory.combinations.get(combinationIndex),
+        combination: memory.combinations.get(combinationIndex)!,
       };
     }
 

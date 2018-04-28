@@ -1,4 +1,6 @@
 import * as React from 'react';
+
+import Index from '../containers/Index';
 import Table from '../containers/Table';
 
 export interface Props {
@@ -45,7 +47,7 @@ export const Setzer = (props: Props) => (
       <div
         id='index'
       >
-        {/*Index.Component(Index.Props(props.count, state.index, handleIndex))*/}
+        <Index />
       </div>
       <div
         id='table'

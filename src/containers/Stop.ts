@@ -10,9 +10,9 @@ export interface Props {
 
 function mapStateToProps({ organ, combination, combinationIndex, memory }: StoreState, { index }: Props) {
   return {
-    stop: organ.stops.get(index),
-    on: combination.stops.get(index),
-    memoryOn: memory.combinations.get(combinationIndex).stops.get(index),
+    stop: organ.stops.get(index)!,
+    on: combination.stops.get(index)!,
+    memoryOn: memory.combinations.get(combinationIndex)!.stops.get(index)!,
   };
 }
 

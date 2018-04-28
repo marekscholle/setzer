@@ -12,7 +12,7 @@ export interface Props {
 const head = (organ: Organ) => (
   <thead>
     <tr>
-      {organ.groups.map((group: StopsGroup, index: number) => (
+      {organ.groups.map((group, index) => (
         <td
           key={index}
         >
@@ -24,10 +24,10 @@ const head = (organ: Organ) => (
 );
 
 const body = (organ: Organ) => {
-  const maxStopSize = organ.groups.map((s: StopsGroup) => s.stops.size).max();
+  const maxStopSize = organ.groups.map(s => s.stops.size).max();
   return (
     <tbody>
-      {Range(0, maxStopSize).map((rowIndex: number) => row(organ, rowIndex))}
+      {Range(0, maxStopSize).map(rowIndex => row(organ, rowIndex))}
     </tbody>
   );
 };
@@ -37,8 +37,8 @@ const row = (organ: Organ, rowIndex: number) => (
     key={rowIndex}
   >
     {organ.groups.map((group: StopsGroup, index) => {
-      const stop = (rowIndex < group.stops.size) ? group.stops.get(rowIndex) : null;
-      return (stop !== null) ? (
+      const stop = group.stops.get(rowIndex);
+      return stop ? (
         <Stop
           key={stop.index}
           index={stop.index}

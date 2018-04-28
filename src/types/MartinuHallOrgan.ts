@@ -7,7 +7,7 @@ export class MartinuHallOrgan implements Organ {
   size = 64;
 
   // tslint:disable:quotemark
-  stops: List<Stop> = Seq.of(
+  stops: List<Stop> = Seq([
     "Burdon 16'",
     "Principál 8'",
     "Flétna dřevěná 8'",
@@ -57,17 +57,17 @@ export class MartinuHallOrgan implements Organ {
     "III/II",
     "Tremolo II",
     "Tremolo III",
-    "Vypínač jazyků")
+    "Vypínač jazyků"])
     // tslint:enable:quotemark
-    .map((name: string, index: number) => new Stop(index, name))
+    .map((name, index) => new Stop(index, name))
     .toList();
 
-  groups: List<StopsGroup> = Seq.of<[string, number, number]>(
+  groups: List<StopsGroup> = Seq([
     ['I. Manuál', 0, 12],
     ['Pedál', 12, 25],
     ['III. Manuál', 25, 37],
-    ['II. Manuál', 37, 50])
-    .map(([name, from, to]: [string, number, number]) =>
+    ['II. Manuál', 37, 50]] as Array<[string, number, number]>)
+    .map(([name, from, to]) =>
       new StopsGroup(this.stops.slice(from, to).toList(), name),
     )
     .toList();
