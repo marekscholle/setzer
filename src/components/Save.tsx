@@ -5,9 +5,12 @@ interface Props {
 }
 
 export const Save = ({ onSave }: Props) => (
-  <div
-    onClick={onSave}
-  >
-    Save
+  <div>
+    <span>Save to file: </span>
+    <button
+      onClick={onSave}
+    >
+      Save
+    </button>
   </div>
 );

@@ -1,26 +1,27 @@
 html {
-  height: 100%;
+  min-height: 100%;
 }
 body {
   height: 100%;
+  margin: 0;
 }
 #root {
   height: 100%;
 }
-#setzer input, label {
-  border-color: inherit;
-  border-style: solid;
+#setzer {
+  height: 100%;
+  font-family: 'Roboto';
+  font-size: 16px;
+  text-align: center;
 }
-#setzer *:focus {
-  outline: none;
-  border-color: DodgerBlue;
-}
-#setzer *::-moz-focus-inner {
-  border:0;
+#setzer > div {
+  display: inline-block;
+  text-align: left;
+  margin: 20px;
 }
 #setzer table {
   margin-bottom: 24px;
-  border: 3px solid Black;
+  border: 2px solid Black;
   border-collapse: collapse;
 }
 #setzer table thead {
@@ -31,20 +32,6 @@ body {
 #setzer table td {
   border: 1px solid Black;
   white-space: pre;
-}
-#setzer {
-  height: 100%;
-  font-family: "Fira Code", monospace;
-  font-size: 16px;
-  text-align: center;
-}
-#setzer:focus {
-  outline: none;
-}
-#setzer > div {
-  display: inline-block;
-  text-align: left;
-  margin: 20px;
 }
 #index {
   text-align: center;
@@ -60,7 +47,7 @@ body {
   font-family: inherit;
 }
 #table td {
-  padding: 1.3ex 1em 1.3ex 0.72em;
+  padding: 1.2ex 1.2em 1.2ex 0.8em;
 }
 #legend td {
   padding: 1ex 1em;
@@ -75,37 +62,8 @@ body {
   font-style: italic;
   text-align: center;
 }
-#load label {
-  display: inline-block;
-  border-width: 3px;
-  padding: 1.3ex 1em 1.3ex 0.72em;
-}
-#load label+span {
-  margin-left: 1em
-}
-#load label:hover {
-  cursor: pointer;
-}
 #load {
-  margin-bottom: 12px
-}
-#save input[type=submit] {
-  margin-left: 0px;
-  display: inline-block;
-  border-width: 3px;
-  border-radius: 0px;
-  padding: 1.3ex 1em 1.3ex 0.72em;
-  background-color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  cursor:pointer;
-}
-#save input[type=text] {
-  margin-left: 0.5em;
-  border-width: 1px;
-  padding: 0.5em;
-  font-family: inherit;
-  font-size: inherit;
+  margin-bottom: 24px;
 }
 #copyright {
   margin-right: calc(1em + 5px);
