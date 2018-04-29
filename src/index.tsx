@@ -19,7 +19,7 @@ const preloadedState: StoreState = {
   combination: Combination.empty(organ.size),
   combinationIndex: 0,
   memory: Memory.empty(organ.count, organ.size),
-  filename: undefined,
+  filename: 'SETZ.DAT',
 };
 
 const store = createStore(

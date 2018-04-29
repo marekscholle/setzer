@@ -9,7 +9,11 @@ export const Load = ({ onLoad }: Props) => (
     <span>Load from file: </span>
     <input
       type='file'
-      onChange={e => onLoad(e.target.files![0])}
+      onChange={e => {
+        if (e.target.files) {
+          onLoad(e.target.files[0]);
+        }
+      }}
     />
   </div>
 );
