@@ -7,4 +7,5 @@ export interface StoreState {
   readonly combination: Combination;
   readonly combinationIndex: number;
   readonly memory: Memory;
+  readonly filename: string | undefined;
 }

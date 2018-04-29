@@ -8,12 +8,12 @@ export interface Props {
   index: number;
 }
 
-function mapStateToProps({ organ, memory }: StoreState) {
+function mapStateToProps({ organ, memory, filename }: StoreState) {
   return {
     onSave: () => {
       const bytes = memory.toBytes(organ.size);
       const blob = new Blob(new Array(bytes), {type : 'application/octet-stream'});
-      saveAs(blob);
+      saveAs(blob, filename);
     },
   };
 }

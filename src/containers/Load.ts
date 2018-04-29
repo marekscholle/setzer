@@ -7,13 +7,13 @@ import { StoreState } from '../types/StoreState';
 
 function mapStateToProps({ organ }: StoreState) {
   return {
-    onLoad: (dispatch: (memory: Memory) => void) => (file: File) => {
+    onLoad: (dispatch: (memory: Memory, filename: string) => void) => (file: File) => {
       const reader = new FileReader();
       reader.onload = _ => {
         const buffer = reader.result as ArrayBuffer;
         const bytes = new Uint8Array(buffer);
         const memory = Memory.fromBytes(bytes, organ.count, organ.size);
-        dispatch(memory);
+        dispatch(memory, file.name);
       };
       reader.readAsArrayBuffer(file);
     },
@@ -22,7 +22,7 @@ function mapStateToProps({ organ }: StoreState) {
 
 function mapDispatchToProps(dispatch: Dispatch<Action>) {
   return {
-    onLoad: (memory: Memory) => dispatch(loadMemory(memory)),
+    onLoad: (memory: Memory, filename: string) => dispatch(loadMemory(memory, filename)),
   };
 }
 

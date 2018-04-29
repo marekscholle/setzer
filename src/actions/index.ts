@@ -22,11 +22,13 @@ export type Action =
 export interface LoadMemory {
   type: ActionType.LoadMemory;
   memory: Memory;
+  filename: string;
 }
 
-export const loadMemory = (memory: Memory): LoadMemory => ({
+export const loadMemory = (memory: Memory, filename: string): LoadMemory => ({
   type: ActionType.LoadMemory,
   memory,
+  filename,
 });
 
 export interface ChangeStop {

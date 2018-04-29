@@ -8,6 +8,7 @@ export function reducer(state: StoreState, action: Action): StoreState {
     return {
       ...state,
       memory: action.memory,
+      filename: action.filename,
     };
 
     case ActionType.ChangeStop:
