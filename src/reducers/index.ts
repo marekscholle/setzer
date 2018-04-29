@@ -30,7 +30,15 @@ export function reducer(state: StoreState, action: Action): StoreState {
       const { organ } = state;
       return {
         ...state,
-        combination: Combination.empty(organ.size),
+        combination: Combination.empty(organ.stops.size),
+      };
+    }
+
+    case ActionType.AllCombination: {
+      const { organ } = state;
+      return {
+        ...state,
+        combination: Combination.all(organ.stops.size),
       };
     }
 

@@ -3,7 +3,8 @@ import { Dispatch } from 'redux';
 
 import {
   Action,
-  changeCombination, ChangeCombinationMethod,
+  allCombination, changeCombination,
+  ChangeCombinationMethod,
   loadCombination,
   saveCombination,
   zeroCombination,
@@ -21,6 +22,7 @@ function mapDispatchToProps(dispatch: Dispatch<Action>) {
     onSaveCombination: () => dispatch(saveCombination()),
     onLoadCombination: () => dispatch(loadCombination()),
     onZeroCombination: () => dispatch(zeroCombination()),
+    onAllCombination: () => dispatch(allCombination()),
     onChangeCombination: (shift: number) => dispatch(changeCombination(ChangeCombinationMethod.RELATIVE, shift)),
   };
 }

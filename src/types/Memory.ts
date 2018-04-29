@@ -11,7 +11,7 @@ export class Memory {
   }
 
   static fromBytes(bytes: Uint8Array, count: number, size: number): Memory {
-    const comb = (index: number) => {
+    const combination = (index: number) => {
       const offset = index * (size / ByteSize);
 
       return new Combination(
@@ -24,21 +24,20 @@ export class Memory {
       );
     };
 
-    return new Memory(Range(0, count).map(comb).toList());
+    return new Memory(Range(0, count).map(combination).toList());
   }
 
   constructor(readonly combinations: List<Combination>) {
     this.combinations = combinations;
   }
 
-  toBytes(memory: Memory): Uint8Array {
-    const bytes = new Uint8Array(memory.count * (memory.size / ByteSize));
-
-    memory.combinations.forEach((comb, index) => {
-      const offset = index * (memory.size / ByteSize);
-      comb.stops.forEach((stop, ix) => {
+  toBytes(size: number): Uint8Array {
+    const bytes = new Uint8Array(this.count * (size / ByteSize));
+    this.combinations.forEach((combination, index) => {
+      const offset = index * size / ByteSize;
+      combination.stops.forEach((stop, ix) => {
         if (stop) {
-          const off = offset + (ix / ByteSize);
+          const off = offset + Math.floor(ix / ByteSize);
           // tslint:disable-next-line:no-bitwise
           bytes[off] = (bytes[off] | (1 << (ix % ByteSize)));
         }

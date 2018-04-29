@@ -3,6 +3,7 @@ export enum ActionType {
   SaveCombination = 'SAVE_COMBINATION',
   LoadCombination = 'LOAD_COMBINATION',
   ZeroCombination = 'ZERO_COMBINATION',
+  AllCombination = 'ALL_COMBINATION',
   ChangeCombination = 'CHANGE_COMBINATION',
 }
 
@@ -11,6 +12,7 @@ export type Action =
   SaveCombination |
   LoadCombination |
   ZeroCombination |
+  AllCombination |
   ChangeCombination;
 
 export interface ChangeStop {
@@ -45,6 +47,14 @@ export interface ZeroCombination {
 
 export const zeroCombination = (): ZeroCombination => ({
   type: ActionType.ZeroCombination,
+});
+
+export interface AllCombination {
+  type: ActionType.AllCombination;
+}
+
+export const allCombination = (): AllCombination => ({
+  type: ActionType.AllCombination,
 });
 
 export enum ChangeCombinationMethod {

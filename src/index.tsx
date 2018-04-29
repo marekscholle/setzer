@@ -5,7 +5,6 @@ import { applyMiddleware, createStore } from 'redux';
 import logger from 'redux-logger';
 
 import Setzer from './containers/Setzer';
-import './index.css';
 import { reducer } from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 import { Combination } from './types/Combination';
