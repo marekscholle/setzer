@@ -1,0 +1,93 @@
+html {
+  min-height: 100%;
+  background-color:#fdf6e3;
+}
+body {
+  height: 100%;
+  margin: 0;
+}
+#root {
+  height: 100%;
+}
+#setzer {
+  height: 100%;
+  font-family: 'Roboto';
+  font-size: 16px;
+  text-align: center;
+  color: #657b83;
+}
+#setzer > div {
+  display: inline-block;
+  text-align: left;
+  margin: 20px;
+}
+#setzer table {
+  margin-bottom: 24px;
+  border: 2px solid #586e75;
+  border-collapse: collapse;
+}
+#setzer table thead {
+  border-bottom: 2px solid #586e75;
+  text-align: center;
+  font-weight: bold;
+}
+#setzer table td {
+  border: 1px solid #586e75;
+}
+#index {
+  margin-bottom: 12px;
+  text-align: center;
+  color: #002b36;
+}
+#index input {
+  border: 1px solid #586e75;
+  padding-left: 0.3em;
+  width: 2ch;
+  background-color: initial;
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: inherit;
+}
+#index input + input {
+  border-left: none;
+}
+#table td {
+  padding: 1.2ex 1.2em 1.2ex 0.8em;
+}
+#legend td {
+  padding: 1ex 1em;
+}
+#legend .mark {
+  text-align: center;
+}
+#navigation td {
+  padding: 1ex 1em;
+}
+#navigation .key {
+  font-style: italic;
+  text-align: center;
+}
+#load {
+  margin-bottom: 24px;
+}
+#copyright {
+  margin-right: calc(1em + 5px);
+  text-align: right;
+}
+.stop-on-on {
+  color: #268bd2;
+  font-weight: bold;
+}
+.stop-on-off {
+  color: #859900;
+  font-weight: bold;
+}
+.stop-off-on {
+  color: #cb4b16;
+  font-weight: bold;
+}
+.stop-off-off
+.stop-index {
+  font-style: italic;
+}

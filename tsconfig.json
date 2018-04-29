@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "build/dist",
+    "watch": true,
     "module": "esnext",
     "target": "es5",
     "lib": ["es6", "dom"],
@@ -17,6 +18,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
   },
+  "compileOnSave": true,
   "exclude": [
     "node_modules",
     "build",
