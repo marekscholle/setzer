@@ -22,7 +22,6 @@ export class Memory {
         ).toList(),
       );
     };
-
     return new Memory(Range(0, count).map(combination).toList());
   }
 
@@ -42,7 +41,6 @@ export class Memory {
         }
       });
     });
-
     return bytes;
   }
 

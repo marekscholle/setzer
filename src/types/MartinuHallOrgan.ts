@@ -69,6 +69,6 @@ export class MartinuHallOrgan implements Organ {
     ['II. Manuál', 37, 50]] as Array<[string, number, number]>)
     .map(([name, from, to]) =>
       new StopsGroup(this.stops.slice(from, to).toList(), name),
-    )
+  )
     .toList();
 }

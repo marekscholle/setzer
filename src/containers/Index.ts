@@ -4,10 +4,6 @@ import { changeCombination, ChangeCombination, ChangeCombinationMethod } from '.
 import { Index } from '../components/Index';
 import { StoreState } from '../types/StoreState';
 
-export interface Props {
-  index: number;
-}
-
 function mapStateToProps({ organ, combinationIndex }: StoreState) {
   return {
     count: organ.count,
