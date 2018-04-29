@@ -1,5 +1,6 @@
 html {
   min-height: 100%;
+  background-color:#fdf6e3;
 }
 body {
   height: 100%;
@@ -13,6 +14,7 @@ body {
   font-family: 'Roboto';
   font-size: 16px;
   text-align: center;
+  color: #657b83;
 }
 #setzer > div {
   display: inline-block;
@@ -21,30 +23,34 @@ body {
 }
 #setzer table {
   margin-bottom: 24px;
-  border: 2px solid Black;
+  border: 2px solid #586e75;
   border-collapse: collapse;
 }
 #setzer table thead {
-  border-bottom: 2px solid Black;
+  border-bottom: 2px solid #586e75;
   text-align: center;
   font-weight: bold;
 }
 #setzer table td {
-  border: 1px solid Black;
-  white-space: pre;
+  border: 1px solid #586e75;
 }
 #index {
-  text-align: center;
   margin-bottom: 12px;
+  text-align: center;
+  color: #002b36;
 }
 #index input {
-  border: 1px solid Grey;
-  padding: 0.1em 0.1em;
+  border: 1px solid #586e75;
+  padding-left: 0.3em;
   width: 2ch;
+  background-color: initial;
   text-align: center;
   font-size: 48px;
   font-weight: bold;
   font-family: inherit;
+}
+#index input + input {
+  border-left: none;
 }
 #table td {
   padding: 1.2ex 1.2em 1.2ex 0.8em;
@@ -70,16 +76,16 @@ body {
   text-align: right;
 }
 .stop-on-on {
-  background-color: #1e90ff;
-  color: White;
+  color: #268bd2;
+  font-weight: bold;
 }
 .stop-on-off {
-  background-color: #81e51b;
-  color: White;
+  color: #859900;
+  font-weight: bold;
 }
 .stop-off-on {
-  background-color: #ff8d1e;
-  color: White;
+  color: #cb4b16;
+  font-weight: bold;
 }
 .stop-off-off
 .stop-index {

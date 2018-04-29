@@ -19,7 +19,7 @@ export const Stop = ({ stop, on, memoryOn, onClick }: Props) => (
     <span
       className='stop-index'
     >
-      {`${stop.index + 1}. `}
+      {`${stop.index + 1}. `}
     </span >
     <span>
       {`${stop.name}`}
@@ -27,4 +27,4 @@ export const Stop = ({ stop, on, memoryOn, onClick }: Props) => (
   </td >
 );
 
-export const EmptyStop = () => <td/>;
+export const EmptyStop = () => <td />;
