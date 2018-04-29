@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import Index from '../containers/Index';
 import Legend from '../containers/Legend';
+import Load from '../containers/Load';
 import Save from '../containers/Save';
 import Table from '../containers/Table';
 import { Navigation } from './Navigation';
@@ -38,9 +39,9 @@ export const Setzer = (props: Props) => (
       <div id='index'><Index /></div>
       <div id='table'><Table /></div>
       <div id='save'><Save /></div>
+      <div id='load'><Load /></div>
       <div id='legend'><Legend /></div>
       <div id='navigation'><Navigation /></div>
-      <div id='load'>{/*Open.Component(Open.Props(props, handleLoad))*/}</div>
       <div id='copyright'><p>Marek Scholle, 2018</p></div>
     </div>
   </div>

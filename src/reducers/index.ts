@@ -4,6 +4,12 @@ import { StoreState } from '../types/StoreState';
 
 export function reducer(state: StoreState, action: Action): StoreState {
   switch (action.type) {
+    case ActionType.LoadMemory:
+    return {
+      ...state,
+      memory: action.memory,
+    };
+
     case ActionType.ChangeStop:
       return {
         ...state,
@@ -30,7 +36,7 @@ export function reducer(state: StoreState, action: Action): StoreState {
       const { organ } = state;
       return {
         ...state,
-        combination: Combination.empty(organ.stops.size),
+        combination: Combination.empty(organ.size),
       };
     }
 

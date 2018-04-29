@@ -13,9 +13,8 @@ export class Memory {
   static fromBytes(bytes: Uint8Array, count: number, size: number): Memory {
     const combination = (index: number) => {
       const offset = index * (size / ByteSize);
-
       return new Combination(
-        Range(offset, offset + (size / ByteSize)).flatMap(byte =>
+        Range(offset, offset + (size / ByteSize)).map(i => bytes[i]).flatMap(byte =>
           Range(0, ByteSize).map(bit => (
             // tslint:disable-next-line:no-bitwise
             (byte & (1 << bit)) !== 0

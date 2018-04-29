@@ -16,7 +16,7 @@ const organ = new MartinuHallOrgan();
 
 const preloadedState: StoreState = {
   organ,
-  combination: Combination.empty(organ.stops.size),
+  combination: Combination.empty(organ.size),
   combinationIndex: 0,
   memory: Memory.empty(organ.count, organ.size),
 };

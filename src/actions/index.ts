@@ -1,4 +1,7 @@
+import { Memory } from '../types/Memory';
+
 export enum ActionType {
+  LoadMemory = 'LOAD_MEMORY',
   ChangeStop = 'CHANGE_STOP',
   SaveCombination = 'SAVE_COMBINATION',
   LoadCombination = 'LOAD_COMBINATION',
@@ -8,12 +11,23 @@ export enum ActionType {
 }
 
 export type Action =
+  LoadMemory |
   ChangeStop |
   SaveCombination |
   LoadCombination |
   ZeroCombination |
   AllCombination |
   ChangeCombination;
+
+export interface LoadMemory {
+  type: ActionType.LoadMemory;
+  memory: Memory;
+}
+
+export const loadMemory = (memory: Memory): LoadMemory => ({
+  type: ActionType.LoadMemory,
+  memory,
+});
 
 export interface ChangeStop {
   type: ActionType.ChangeStop;

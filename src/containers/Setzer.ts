@@ -10,12 +10,6 @@ import {
   zeroCombination,
 } from '../actions';
 import { Setzer } from '../components/Setzer';
-import { StoreState } from '../types/StoreState';
-
-function mapStateToProps({ }: StoreState) {
-  return {
-  };
-}
 
 function mapDispatchToProps(dispatch: Dispatch<Action>) {
   return {
@@ -28,6 +22,6 @@ function mapDispatchToProps(dispatch: Dispatch<Action>) {
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps,
 )(Setzer);
